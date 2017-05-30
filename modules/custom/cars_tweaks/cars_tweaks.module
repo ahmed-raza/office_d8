@@ -1,0 +1,11 @@
+<?php
+
+
+function cars_tweaks_form_alter(&$form, &$form_state, $form_id){
+  if ($form_id === 'node_cars_form') {
+    $user = \Drupal::currentUser();
+    if (!in_array("administrator", $user->getRoles())) {
+      unset($form['revision_log']);
+    }
+  }
+}

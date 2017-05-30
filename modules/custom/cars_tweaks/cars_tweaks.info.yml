@@ -1,0 +1,5 @@
+name: Cars Tweaks
+descrition: Cars Tweaks is the module for site wide customizations.
+
+type: module
+core: 8.x
