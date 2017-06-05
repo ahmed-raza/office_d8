@@ -1,0 +1,81 @@
+.navbar-default {
+  background: transparent;
+  border: none;
+  .logo {
+    img {
+      width: 50%;
+    }
+  }
+  .navbar-brand {
+    display: none;
+  }
+  .nav.navbar-nav {
+    margin-top: 30px;
+    li {
+      padding-left: 15px  ;
+      padding-right: 15px;
+      a {
+        font-size: 17px;
+        padding-left: 0;
+        padding-right: 0;
+        color: $dark-gray;
+        font-family: 'POP_M';
+        text-transform: uppercase;
+
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+         &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+        background: $dark-gray;
+        height: 2px;
+        -webkit-transition-property: right;
+        transition-property: right;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+      }
+      }
+      &.active a {
+        background: transparent;
+      }     
+      &.active a:before {
+        right: 0
+      }
+      &.expanded {
+        ul.dropdown-menu {
+          > li {
+            padding-bottom: 10px !important;
+            span {
+              font-size: 14px !important;
+              color: $dark-gray;
+              font-family: 'POP_M';
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-default .nav.navbar-nav li a:hover:before,
+.navbar-default .nav.navbar-nav li a:focus:before,
+.navbar-default .nav.navbar-nav li a:active:before,
+.navbar-default .nav.navbar-nav li.active a:before {
+  right: 0
+}
