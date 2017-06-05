@@ -1,11 +1,21 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
 
-function cars_tweaks_form_alter(&$form, &$form_state, $form_id){
+function cars_tweaks_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id){
   if ($form_id === 'node_cars_form') {
     $user = \Drupal::currentUser();
     if (!in_array("administrator", $user->getRoles())) {
       unset($form['revision_log']);
     }
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'cars_tweaks_form_submit';
+      }
+    }
   }
+}
+
+function cars_tweaks_form_submit($form, &$form_state){
+  drupal_set_message(t('Your ad is under review of our content admin team. You will be notified via email once its posted.'));
 }
