@@ -10,3 +10,9 @@
 .view-ads .views-row .other-info {
   padding: 10px 0;
 }
+.view-ads {
+  /*color: #3b5998;*/
+}
+#block-message textarea {
+  margin-bottom: 15px;
+}
