@@ -1,0 +1,12 @@
+.view-ads .title h2 {
+  margin-top: 0;
+}
+.view-frontpage .views-field-title {
+  margin-top: 10px;
+}
+.view-ads .views-row {
+  padding-bottom: 20px;
+}
+.view-ads .views-row .other-info {
+  padding: 10px 0;
+}

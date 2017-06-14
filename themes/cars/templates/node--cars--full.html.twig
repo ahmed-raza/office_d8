@@ -75,6 +75,7 @@
     'clearfix',
   ]
 %}
+{% set date = node.createdtime|format_date('ads_date') %}
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
@@ -87,25 +88,9 @@
 
   {% if display_submitted %}
     <footer>
-      {{ author_picture }}
-      <div>
-        <div id="blog-author-information"{{ author_attributes.addClass('author') }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          {{ metadata }}
-        </div>
-        <div id="blog-tags">
-        {% for key, item in content.field_blog_tags if key|first != '#' and item['#options']['entity'].vid.getValue()[0]['target_id'] != 'tags' %}
-          <div class="blog-taxonomy-item blog-taxonomy-item-{{ item['#title']|lower|replace({'% %': '_'}) }}">
-            <img 
-              class="blog-taxonomy-image-{{ item['#title']|lower|replace({'% %': '_'}) }}" 
-              onMouseOver="this.src='{{ item['#options']['entity'].field_hover_icon.entity.uri.value | image_style('very_small_thumb_25x25') }}'"
-              onMouseOut="this.src='{{ item['#options']['entity'].field_default_icon.entity.uri.value | image_style('very_small_thumb_25x25') }}'"
-              src="{{ item['#options']['entity'].field_default_icon.entity.uri.value | image_style('very_small_thumb_25x25') }}"
-              >
-            {{ item }}
-          </div>
-        {% endfor %}
-        </div>
+      <div{{ author_attributes.addClass('author') }}>
+        {% trans %}By {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
       </div>
     </footer>
   {% endif %}
