@@ -32,10 +32,8 @@
   transition: background-color 0.5s;
   background-color: rgba(15, 14, 14, 0.51);
 }
-.view-team .views-row:hover {
-  cursor: pointer;
-}
 .view-team .views-row:hover .info {
+  cursor: pointer;
   transition: background-color 0.5s;
   background-color: rgba(15, 14, 14, 0.92);
 }
