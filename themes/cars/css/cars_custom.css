@@ -64,3 +64,10 @@
   transition: background-color 0.5s;
   background-color: rgba(15, 14, 14, 0.51);
 }
+#cboxTitle {
+  font-weight: bold;
+  font-size: 24px;
+}
+.block-views .view-ads .group-left {
+  padding-right: 0;
+}
