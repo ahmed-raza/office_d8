@@ -16,3 +16,44 @@
 #block-message textarea {
   margin-bottom: 15px;
 }
+.user-register-form .field--name-field-age input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+}
+.view-team .views-field-nothing {
+  position: relative;
+}
+.view-team .info {
+  bottom: 0;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  transition: background-color 0.5s;
+  background-color: rgba(15, 14, 14, 0.51);
+}
+.view-team .views-row:hover {
+  cursor: pointer;
+}
+.view-team .views-row:hover .info {
+  transition: background-color 0.5s;
+  background-color: rgba(15, 14, 14, 0.92);
+}
+.views-exposed-form .form-composite.form-checkboxes {
+  width: 100%;
+  display: block;
+}
+.bef-exposed-form .form--inline > .form-item {
+  float: none;
+}
+.views-exposed-form .form-type-checkbox {
+  width: 50%;
+  float: left !important;
+}
+.views-exposed-form .form-type-checkbox input {
+  margin-right: 5px;
+}
+.views-exposed-form button,
+.views-exposed-form .form-type-textfield {
+  margin-top: 15px;
+}
