@@ -1,0 +1,6 @@
+name: 'User Messages'
+description: 'Provide User messages form and messages functionality.'
+type: module
+core: 8.x
+version: 8.x-1.0
+package: custom

@@ -1,0 +1,50 @@
+<?php
+
+// implementation of hook_schema
+
+  function messages_schema(){
+    $schema['messages'] = array(
+        'description' => 'Table of custom message module.',
+        'fields' => array(
+          'id' => array(
+            'description' => 'The identifier of the submission.',
+            'type' => 'serial',
+            'not null' => TRUE,
+            ),
+          'uid' => array(
+            'description' => 'Receiver\'s user ID.',
+            'type' => 'int',
+            'not null' => TRUE,
+            ),
+          'name' => array(
+            'description' => 'Sender name.',
+            'type' => 'varchar',
+            'length' => 255,
+            'not null' => TRUE,
+            'default' => '',
+            ),
+          'mail' => array(
+            'description' => 'Sender email.',
+            'type' => 'varchar',
+            'length' => 255,
+            'not null' => TRUE,
+            'default' => '',
+            ),
+          'phone' => array(
+            'description' => 'Sender phone number.',
+            'type' => 'varchar',
+            'length' => 255,
+            'not null' => TRUE,
+            'default' => '',
+            ),
+          'message' => array(
+            'description' => 'Sender message.',
+            'type' => 'text',
+            'not null' => TRUE,
+            'size' => 'big',
+            ),
+          ),
+        'primary key' => array('id'),
+      );
+  return $schema;
+  }

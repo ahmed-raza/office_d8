@@ -1,0 +1,7 @@
+messages.messages:
+  path: 'user/messages'
+  defaults:
+    _controller: '\Drupal\messages\Controller\MessagesController::messages'
+    _title: 'Your Messages'
+  requirements:
+    _permission: 'access content'
