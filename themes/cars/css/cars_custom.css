@@ -57,3 +57,12 @@
 .views-exposed-form .form-type-textfield {
   margin-top: 15px;
 }
+.view-slider .views-field-body {
+  position: absolute;
+  bottom: 0;
+  padding: 0px 10px 20px 10px;
+  color: white;
+  width: 100%;
+  transition: background-color 0.5s;
+  background-color: rgba(15, 14, 14, 0.51);
+}
